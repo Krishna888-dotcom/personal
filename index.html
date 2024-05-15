@@ -551,10 +551,10 @@
           <h2>Music Player</h2>
           <ul class="song-list">
               <li onclick="playSong(0)">Adele - Hello</li>
-              <li onclick="playSong(1)">Vraj Jan Man Sukhkari Radhe</li>
-              <li onclick="playSong(2)">RADHA RANI</li>
-              <li onclick="playSong(3)">Main Koi Aisa Geet Gaoon</li>
-              <li onclick="playSong(4)">Mein Chali</li>
+              <li onclick="playSong(1)">Adele - Rolling in the deep</li>
+              <li onclick="playSong(2)">Adele - Send my love</li>
+              <li onclick="playSong(3)">Adele - Someone like you</li>
+              <li onclick="playSong(4)">Nepalese mashup</li>
               <li onclick="playSong(5)">Ritviz - Liggi</li>
               <li onclick="playSong(6)">Kya Leke Aaya Jagat Mai - Neeraj Arya Omnitious Flip Scam 1992</li>
               <li onclick="playSong(7)">Bollywood Jukebox I Khudgharz</li>
@@ -578,8 +578,7 @@
   
           function playSong(index) {
               var audioPlayer = document.getElementById('audio-player');
-              audioPlayer.src = 'assets/' + 'song' + (index + 1) + '.mp3'; // Adjust the song filename pattern as needed
-              // audioPlayer.src = "assets/song1.mp3";
+              audioPlayer.src = 'assets/songs/' + 'song' + (index + 1) + '.mp3'; // Adjust the song filename pattern as needed
               audioPlayer.play();
               // Remove the 'playing' class from the previously selected song
               if (currentSongIndex !== null) {
