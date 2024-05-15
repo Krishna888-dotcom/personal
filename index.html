@@ -34,6 +34,25 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+  <style>
+    /* Basic styles for the player */
+    #music-player {
+        margin: 20px;
+    }
+    .song-list {
+        list-style-type: none;
+        padding: 0;
+    }
+    .song-list li {
+        margin-bottom: 5px;
+        cursor: pointer;
+    }
+    .song-list li.playing {
+        background-color: #48e67c;
+    }
+</style>
+
 </head>
 
 <body>
@@ -475,6 +494,7 @@
       </div>
 
       <div class="row">
+        <!-- 
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
           <div class="icon-box">
             <div class="icon"><i class="bx bxl-dribbble"></i></div>
@@ -522,6 +542,56 @@
             <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
           </div>
         </div>
+        -->
+
+        <div id="music-player">
+          <h2>Music Player</h2>
+          <ul class="song-list">
+              <li onclick="playSong(0)">Sukh Karta Dukh Harta</li>
+              <li onclick="playSong(1)">Vraj Jan Man Sukhkari Radhe</li>
+              <li onclick="playSong(2)">RADHA RANI</li>
+              <li onclick="playSong(3)">Main Koi Aisa Geet Gaoon</li>
+              <li onclick="playSong(4)">Mein Chali</li>
+              <li onclick="playSong(5)">Ritviz - Liggi</li>
+              <li onclick="playSong(6)">Kya Leke Aaya Jagat Mai - Neeraj Arya Omnitious Flip Scam 1992</li>
+              <li onclick="playSong(7)">Bollywood Jukebox I Khudgharz</li>
+              <li onclick="playSong(8)">Main Koi Aisa Geet Gaoon Cover song Sneha Ganguly Abhijeet Bhattacharya Shahrukh Khan</li>
+              <li onclick="playSong(9)">Sajjan Raj Vaidya - Sasto Mutu</li>
+              <li onclick="playSong(10)">Basanta - The season of Joy Siri Siri Song of the Spring</li>
+              <li onclick="playSong(11)">Ujan Shakya - Rajamati Chaa</li>
+              <li onclick="playSong(12)">Namari Baachey - Phiroj Adrian</li>
+              <li onclick="playSong(13)">Asar Ye Kaisi Hai Teri Chahat Ka Rang Jo Lagyo Re Atif Aslam Shreya Ghoshal Ramaiya Vastavaiya</li>
+              <li onclick="playSong(14)">Tune Jo Na Kaha - lyrics New YorkJohn Abraham Katrina Kaif Neil Nitin Mohit Chauhan</li>
+               <!-- Add more songs as needed -->
+          </ul>
+          <audio id="audio-player" controls onended="playNextSong()">
+              Your browser does not support the audio element.
+          </audio>
+      </div>
+  
+      <script>
+          var currentSongIndex = null;
+          var songElements = document.querySelectorAll('.song-list li');
+  
+          function playSong(index) {
+              var audioPlayer = document.getElementById('audio-player');
+              audioPlayer.src = 'song' + (index + 1) + '.mp3'; // Adjust the song filename pattern as needed
+              audioPlayer.play();
+  
+              // Remove the 'playing' class from the previously selected song
+              if (currentSongIndex !== null) {
+                  songElements[currentSongIndex].classList.remove('playing');
+              }
+  
+              // Add the 'playing' class to the currently selected song
+              songElements[index].classList.add('playing');
+              currentSongIndex = index;
+          }
+          function playNextSong() {
+              var nextIndex = (currentSongIndex + 1) % songElements.length;
+              playSong(nextIndex);
+          }
+      </script>
 
       </div>
 
