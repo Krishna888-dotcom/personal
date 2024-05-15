@@ -550,7 +550,7 @@
         <div id="music-player">
           <h2>Music Player</h2>
           <ul class="song-list">
-              <li onclick="playSong(0)">Sukh Karta Dukh Harta</li>
+              <li onclick="playSong(0)">Adele - Hello</li>
               <li onclick="playSong(1)">Vraj Jan Man Sukhkari Radhe</li>
               <li onclick="playSong(2)">RADHA RANI</li>
               <li onclick="playSong(3)">Main Koi Aisa Geet Gaoon</li>
@@ -578,8 +578,8 @@
   
           function playSong(index) {
               var audioPlayer = document.getElementById('audio-player');
-              // audioPlayer.src = 'song' + (index + 1) + '.mp3'; // Adjust the song filename pattern as needed
-              audioPlayer.src = "assets/song1.mp3";
+              audioPlayer.src = "assets/'song' + (index + 1) + '.mp3'"; // Adjust the song filename pattern as needed
+              // audioPlayer.src = "assets/song1.mp3";
               audioPlayer.play();
               // Remove the 'playing' class from the previously selected song
               if (currentSongIndex !== null) {
