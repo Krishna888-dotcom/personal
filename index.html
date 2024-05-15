@@ -578,7 +578,8 @@
   
           function playSong(index) {
               var audioPlayer = document.getElementById('audio-player');
-              audioPlayer.src = 'song' + (index + 1) + '.mp3'; // Adjust the song filename pattern as needed
+              // audioPlayer.src = 'song' + (index + 1) + '.mp3'; // Adjust the song filename pattern as needed
+              audioPlayer.src = "assets/song1.mp3";
               audioPlayer.play();
               // Remove the 'playing' class from the previously selected song
               if (currentSongIndex !== null) {
